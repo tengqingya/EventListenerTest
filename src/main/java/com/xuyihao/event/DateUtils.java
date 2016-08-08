@@ -338,4 +338,30 @@ public class DateUtils {private static final String DATE_TIME_FORMAT = "yyyy-MM-
         }
     }
 
+    /**
+     * 获取当前月的第一天
+     *
+     * @return
+     */
+    public static String getFirstDayOfCurrentMonth(){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar cal=Calendar.getInstance();
+        cal.add(Calendar.MONTH, 0);
+        cal.set(Calendar.DAY_OF_MONTH,1);
+        return format.format(cal.getTime());
+    }
+
+    /**
+     * 获取当前月之前(后)的diff月的第一天
+     *
+     * @param diff
+     * @return
+     */
+    public static String getFirstDayOfDiffMonth(int diff){
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar cal=Calendar.getInstance();
+        cal.add(Calendar.MONTH, diff);
+        cal.set(Calendar.DAY_OF_MONTH,1);
+        return format.format(cal.getTime());
+    }
 }
