@@ -14,6 +14,19 @@ public class JohnsonMain {
 		eventTest1();
 		System.out.println("\r\n-----------------------------------\r\n");
 		eventTest2();
+		System.out.println("\r\n-----------------------------------\r\n");
+		exentTest3();
+	}
+
+	/**
+	 * 外部类作为事件监听器
+	 */
+	public static void exentTest3() {
+		JohnsonEventSource source = new JohnsonEventSource();
+		source.addEventListener(new OuterListerner());
+		source.event1();
+		source.event2();
+		source.event3();
 	}
 
 	/**
