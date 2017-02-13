@@ -63,7 +63,9 @@ public class JohnsonEventSource {
 	 * </pre>
 	 */
 	public void event1() {
+		//此处传递this进去的时候，也就是把source传递了进去，之后就可以通过eventObject.getSource()方法得到source
 		JohnsonEventObject object = new JohnsonEventObject(this, JohnsonEventObject.EVENT_TYPE_ONE);
+		System.out.println("EventObject1  "+object);
 		doOnAction(object);
 	}
 
@@ -75,7 +77,9 @@ public class JohnsonEventSource {
 	 * </pre>
 	 */
 	public void event2() {
+		//此处传递this进去的时候，也就是把source传递了进去，之后就可以通过eventObject.getSource()方法得到source
 		JohnsonEventObject object = new JohnsonEventObject(this, JohnsonEventObject.EVENT_TYPE_TWO);
+		System.out.println("EventObject2  "+object);
 		doOnAction(object);
 	}
 
@@ -87,7 +91,9 @@ public class JohnsonEventSource {
 	 * </pre>
 	 */
 	public void event3() {
+		//此处传递this进去的时候，也就是把source传递了进去，之后就可以通过eventObject.getSource()方法得到source
 		JohnsonEventObject object = new JohnsonEventObject(this, JohnsonEventObject.EVENT_TYPE_THREE);
+		System.out.println("EventObject3  "+object);
 		doOnAction(object);
 	}
 
