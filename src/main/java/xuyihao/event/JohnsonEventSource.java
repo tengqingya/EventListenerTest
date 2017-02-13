@@ -64,8 +64,13 @@ public class JohnsonEventSource {
 	 */
 	public void event1() {
 		//此处传递this进去的时候，也就是把source传递了进去，之后就可以通过eventObject.getSource()方法得到source
+		//object不一样 但是每次source都是一样的 object只是起到一个传递source的作用
+		//所以每次取得source的时候取得的都是一样的source
+		//source传到object中去，object传到doOnActionn中去
+		//doOnAction调用listener的onaction方法 即调用之前添加到listener中的实现了listener的onaction方法
+		//因为 在回调方法中 能够获得source 所以source中的任何东西/方法都可以在回调中调用
 		JohnsonEventObject object = new JohnsonEventObject(this, JohnsonEventObject.EVENT_TYPE_ONE);
-		System.out.println("EventObject1  "+object);
+		System.out.println("EventObject1--->>>"+object.hashCode());
 		doOnAction(object);
 	}
 
@@ -79,7 +84,7 @@ public class JohnsonEventSource {
 	public void event2() {
 		//此处传递this进去的时候，也就是把source传递了进去，之后就可以通过eventObject.getSource()方法得到source
 		JohnsonEventObject object = new JohnsonEventObject(this, JohnsonEventObject.EVENT_TYPE_TWO);
-		System.out.println("EventObject2  "+object);
+		System.out.println("EventObject2--->>>  "+object.hashCode());
 		doOnAction(object);
 	}
 
@@ -93,7 +98,7 @@ public class JohnsonEventSource {
 	public void event3() {
 		//此处传递this进去的时候，也就是把source传递了进去，之后就可以通过eventObject.getSource()方法得到source
 		JohnsonEventObject object = new JohnsonEventObject(this, JohnsonEventObject.EVENT_TYPE_THREE);
-		System.out.println("EventObject3  "+object);
+		System.out.println("EventObject3--->>> "+object.hashCode());
 		doOnAction(object);
 	}
 

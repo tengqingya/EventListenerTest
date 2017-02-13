@@ -42,6 +42,7 @@ public class JohnsonMain {
 				JohnsonEventSource source1 = (JohnsonEventSource) eventObject.getSource();
 				source1.sourceFunction("事件监听器 1 监听到事件--事件类型: " + String.valueOf(eventObject.getEventType()));
 				// 这里也可以直接使用外部的source对象，本质上是一个对象
+				System.out.println("source1--->>>"+source1.hashCode());
 			}
 		});
 		// 事件源绑定事件监听2
@@ -49,6 +50,7 @@ public class JohnsonMain {
 			public void onAction(JohnsonEventObject eventObject) {
 				JohnsonEventSource source2 = (JohnsonEventSource) eventObject.getSource();
 				source2.sourceFunction("事件监听器 2 监听到事件--事件类型: " + String.valueOf(eventObject.getEventType()));
+				System.out.println("source2--->>>"+source2.hashCode());
 			}
 		});
 		// 启动事件
