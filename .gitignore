@@ -22,3 +22,10 @@ target/classes/com/xuyihao/event/MapKeyTest.class
 target/classes/com/xuyihao/event/RandomUtils.class
 target/generated-sources/
 /target/
+.project
+.classpath
+.settings
+target
+test-output
+.idea
+*.iml
